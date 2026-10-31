@@ -1,0 +1,65 @@
+asic_pin,schematic_signal,schematic_direction,recovered_direction,hdl_connection,active_level,notes
+1,Top_Cart_Select,output,input,middle_slot_insert_n,low,Original schematic label/direction corrected by paired physical tests; low means cartridge inserted
+2,Middle_Cart_Select,input,output,middle_cart_select,high,Inverse of physical pin 1
+3,GND,power_in,power,,0 V,
+4,Switch_Codes_On,input,input,switch_menu_n,low,Low is the bottom/menu switch position
+5,FF_Reset,input,input,ff_reset_n,low,Low together with pin 4 low clears Control B
+6,Switch_Trainer,input,input,switch_active_n,low,Low is the top/fully-active switch position
+7,/Read.Sys,input,input,read_sys_n,low,
+8,PwrGood,input,input,pwr_good,high,Low clears all recovered state
+9,GND,power_in,power,,0 V,
+10,A0,input,input,address[0],,
+11,A1,input,input,address[1],,
+12,A2,input,input,address[2],,
+13,A3,input,input,address[3],,
+14,A4,input,input,address[4],,
+15,A5,input,input,address[5],,
+16,A6,input,input,address[6],,
+17,A7,input,input,address[7],,
+18,A8,input,input,address[8],,
+19,A9,input,input,address[9],,
+20,A10,input,input,address[10],,
+21,VCC,power_in,power,,+5 V,
+22,D0,bidirectional,bidirectional,data_in[0] / data_out[0] when data_oe,,
+23,D1,bidirectional,bidirectional,data_in[1] / data_out[1] when data_oe,,
+24,D2,bidirectional,bidirectional,data_in[2] / data_out[2] when data_oe,,
+25,D3,bidirectional,bidirectional,data_in[3] / data_out[3] when data_oe,,
+26,GND,power_in,power,,0 V,
+27,D4,bidirectional,bidirectional,data_in[4] / data_out[4] when data_oe,,
+28,D5,bidirectional,bidirectional,data_in[5] / data_out[5] when data_oe,,
+29,D6,bidirectional,bidirectional,data_in[6] / data_out[6] when data_oe,,
+30,D7,bidirectional,bidirectional,data_in[7] / data_out[7] when data_oe,,
+31,VCC,power_in,power,,+5 V,
+32,A11,input,input,address[11],,
+33,A12,input,input,address[12],,
+34,A13,input,input,address[13],,
+35,A14,input,input,address[14],,
+36,A15,input,input,address[15],,
+37,BA0,input,input,bank[0],,
+38,BA1,input,input,bank[1],,
+39,BA2,input,input,bank[2],,
+40,BA3,input,input,bank[3],,
+41,BA4,input,input,bank[4],,
+42,BA5,input,input,bank[5],,
+43,BA6,input,input,bank[6],,
+44,BA7,input,input,bank[7],,
+45,/Write,input,input,write_n,low,Writes are captured on the falling edge
+46,Unknown,passive,strap,test_strap_46,low,Tie low as on the original REF1080 board
+47,GND,power_in,power,,0 V,
+48,SRAM./CE,output,output,sram_ce_n,low,
+49,/Read.Top,output,output,read_top_n,low,
+50,EPROM./OE,output,output,eprom_oe_n,low,
+51,N/C,passive,output,hidden_51_n,low,Recovered complementary ROM-bank read output; unconnected on retail board
+52,LED_/EN,output,output,led_en_n,low,
+53,/Write_Internal,output,output,write_internal_n,low,
+54,N/C,passive,output,aux_54,,Recovered equation is aux_input_63 OR NOT(control_a[2])
+55,N/C,passive,output,hidden_55_n,low,Recovered polarity depends on control_a and physical pin 64
+56,D4.Pulldown,output,output,d4_pulldown,high,High requests the external D4 pull-down path
+57,VCC,power_in,power,,+5 V,
+58,GND,power_in,power,,0 V,
+59,N/C,passive,output,hidden_59_n,low,Recovered hidden output; unconnected on retail board
+60,D4.Pullup,output,output,d4_pullup_n,low,Low requests the external D4 pull-up path
+61,N/C,passive,output,game_latch,high,Mirrors retained Control B
+62,N/C,passive,output,compare_match,high,Raw comparator OR including detect-only slot 7
+63,N/C,passive,input,aux_input_63,,Paired tests proved this is an input used by pin 54
+64,N/C,passive,input,aux_input_64,,Paired tests proved this is an input selecting pin-55 polarity
